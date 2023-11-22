@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED152FDF2B0B347600FA2278 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED152FDE2B0B347600FA2278 /* SecondViewController.swift */; };
+		ED152FE42B0E3E6E00FA2278 /* BMICalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED152FE32B0E3E6E00FA2278 /* BMICalculatorManager.swift */; };
+		ED152FE62B0E44E500FA2278 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED152FE52B0E44E500FA2278 /* AlertManager.swift */; };
+		ED152FE82B0E5BB700FA2278 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED152FE72B0E5BB700FA2278 /* BMI.swift */; };
 		EDD1F7142B0A70320027499B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD1F7132B0A70320027499B /* AppDelegate.swift */; };
 		EDD1F7162B0A70320027499B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD1F7152B0A70320027499B /* SceneDelegate.swift */; };
 		EDD1F7182B0A70320027499B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD1F7172B0A70320027499B /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED152FDE2B0B347600FA2278 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		ED152FE32B0E3E6E00FA2278 /* BMICalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorManager.swift; sourceTree = "<group>"; };
+		ED152FE52B0E44E500FA2278 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		ED152FE72B0E5BB700FA2278 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 		EDD1F7102B0A70320027499B /* BMICalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMICalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD1F7132B0A70320027499B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD1F7152B0A70320027499B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED152FE02B0E3DF200FA2278 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED152FE72B0E5BB700FA2278 /* BMI.swift */,
+				ED152FE32B0E3E6E00FA2278 /* BMICalculatorManager.swift */,
+				ED152FE52B0E44E500FA2278 /* AlertManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED152FE12B0E3DFC00FA2278 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDD1F7172B0A70320027499B /* ViewController.swift */,
+				ED152FDE2B0B347600FA2278 /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED152FE22B0E3E0600FA2278 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDD1F7192B0A70320027499B /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EDD1F7072B0A70320027499B = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +93,9 @@
 			children = (
 				EDD1F7132B0A70320027499B /* AppDelegate.swift */,
 				EDD1F7152B0A70320027499B /* SceneDelegate.swift */,
-				EDD1F7172B0A70320027499B /* ViewController.swift */,
-				EDD1F7192B0A70320027499B /* Main.storyboard */,
+				ED152FE02B0E3DF200FA2278 /* Models */,
+				ED152FE22B0E3E0600FA2278 /* Views */,
+				ED152FE12B0E3DFC00FA2278 /* Controllers */,
 				EDD1F71C2B0A70340027499B /* Assets.xcassets */,
 				EDD1F71E2B0A70340027499B /* LaunchScreen.storyboard */,
 				EDD1F7212B0A70340027499B /* Info.plist */,
@@ -138,8 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED152FE62B0E44E500FA2278 /* AlertManager.swift in Sources */,
+				ED152FDF2B0B347600FA2278 /* SecondViewController.swift in Sources */,
 				EDD1F7182B0A70320027499B /* ViewController.swift in Sources */,
+				ED152FE82B0E5BB700FA2278 /* BMI.swift in Sources */,
 				EDD1F7142B0A70320027499B /* AppDelegate.swift in Sources */,
+				ED152FE42B0E3E6E00FA2278 /* BMICalculatorManager.swift in Sources */,
 				EDD1F7162B0A70320027499B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GKp-kd-yEG">
                                         <rect key="frame" x="0.0" y="55" width="333" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjI-Ml-zcF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjI-Ml-zcF">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Iha-Fk-nWE"/>
@@ -60,7 +60,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FTA-v6-aje">
                                         <rect key="frame" x="0.0" y="125" width="333" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMp-Bf-H1m">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몸무게" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMp-Bf-H1m">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="X6v-cT-Hj8"/>
@@ -104,6 +104,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="bmiCalculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vls-Rl-ysT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -117,22 +120,26 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nth-Du-TfY" secondAttribute="trailing" constant="30" id="qh4-Ek-EcM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightTextField" destination="M48-Kb-BOU" id="TVS-It-1Lf"/>
+                        <outlet property="weightTextField" destination="gJL-5U-3pH" id="qDn-81-mLv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-213" y="-7"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="npG-Hv-THd">
             <objects>
-                <viewController id="QkU-bQ-LIL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" id="QkU-bQ-LIL" customClass="SecondViewController" customModule="BMICalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YRE-Ol-F2p">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZn-sM-UKh">
                                 <rect key="frame" x="30" y="698" width="333" height="60"/>
-                                <color key="backgroundColor" red="0.73921130952380953" green="0.2317684618694571" blue="0.32842424237211365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.73921130952380953" green="0.19002675181582995" blue="0.22853354196582809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="V1H-e2-rlF"/>
                                 </constraints>
@@ -147,11 +154,14 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="QkU-bQ-LIL" eventType="touchUpInside" id="ud7-us-tPK"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-4e-kIJ">
                                 <rect key="frame" x="96.666666666666686" y="189" width="200" height="160"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shT-xL-bi1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shT-xL-bi1">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="c3E-rq-ez0"/>
@@ -201,6 +211,10 @@
                             <constraint firstItem="qua-uF-nLQ" firstAttribute="trailing" secondItem="uZn-sM-UKh" secondAttribute="trailing" constant="30" id="xcv-N2-s9i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="gtl-sb-fXi" id="o7n-8J-86A"/>
+                        <outlet property="bmiLabel" destination="6up-vv-GrT" id="duQ-Bx-dq5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jt-Gp-37X" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,7 +223,7 @@
     </scenes>
     <resources>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
