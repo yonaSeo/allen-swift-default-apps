@@ -13,6 +13,7 @@
 		EDAC4F7D2B0238F700162E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAC4F7B2B0238F700162E7F /* Main.storyboard */; };
 		EDAC4F7F2B0238F800162E7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDAC4F7E2B0238F800162E7F /* Assets.xcassets */; };
 		EDAC4F822B0238F800162E7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAC4F802B0238F800162E7F /* LaunchScreen.storyboard */; };
+		EDDE75C22B138C6E0029A2C3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE75C12B138C6E0029A2C3 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EDAC4F7E2B0238F800162E7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDAC4F812B0238F800162E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDAC4F832B0238F800162E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDE75C12B138C6E0029A2C3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,30 @@
 			children = (
 				EDAC4F752B0238F700162E7F /* AppDelegate.swift */,
 				EDAC4F772B0238F700162E7F /* SceneDelegate.swift */,
-				EDAC4F792B0238F700162E7F /* ViewController.swift */,
+				EDDE75BF2B138C430029A2C3 /* View */,
+				EDDE75C02B138C510029A2C3 /* Controller */,
 				EDAC4F7B2B0238F700162E7F /* Main.storyboard */,
 				EDAC4F7E2B0238F800162E7F /* Assets.xcassets */,
 				EDAC4F802B0238F800162E7F /* LaunchScreen.storyboard */,
 				EDAC4F832B0238F800162E7F /* Info.plist */,
 			);
 			path = LoginProject;
+			sourceTree = "<group>";
+		};
+		EDDE75BF2B138C430029A2C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE75C12B138C6E0029A2C3 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDDE75C02B138C510029A2C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDAC4F792B0238F700162E7F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +159,7 @@
 			files = (
 				EDAC4F7A2B0238F700162E7F /* ViewController.swift in Sources */,
 				EDAC4F762B0238F700162E7F /* AppDelegate.swift in Sources */,
+				EDDE75C22B138C6E0029A2C3 /* LoginView.swift in Sources */,
 				EDAC4F782B0238F700162E7F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

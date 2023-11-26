@@ -1,23 +1,18 @@
 //
-//  ViewController.swift
+//  LoginView.swift
 //  LoginProject
 //
-//  Created by yona on 11/13/23.
+//  Created by yona on 11/26/23.
 //
 
 import UIKit
 
-
-// MARK: - View Controller
-final class ViewController: UIViewController {
+class LoginView: UIView {
     private let textViewHeight: CGFloat = 48
     private lazy var emailInfoLabelCenterYAnchorConstraint =
         emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
     private lazy var passwordInfoLabelCenterYAnchorConstraint =
         passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
-    
-    
-    
     
     // MARK: - Email Part
     private lazy var emailTextFieldView: UIView = {
@@ -51,7 +46,6 @@ final class ViewController: UIViewController {
         tf.addTarget(self, action: #selector(textFieldEditted(_:)), for: .editingChanged)
         return tf
     }()
-    
     
     // MARK: - Password Part
     private lazy var passwordTextFieldView: UIView = {
@@ -99,7 +93,7 @@ final class ViewController: UIViewController {
     }()
     
     
-    private lazy var loginButton: UIButton = {
+    public lazy var loginButton: UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
         button.layer.cornerRadius = 5
@@ -110,17 +104,17 @@ final class ViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        //button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private lazy var passwordResetButton: UIButton = {
+    public lazy var passwordResetButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
         button.setTitle("비밀번호 재설정", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+        //button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -135,23 +129,24 @@ final class ViewController: UIViewController {
         return sv
     }()
     
-    
-    
-    // MARK: - VDL
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
         setupAutoLayout()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Set Layout
     private func setupAutoLayout() {
-        view.backgroundColor = .black
-        [stackView, passwordResetButton].forEach { view.addSubview($0) }
+        self.backgroundColor = .black
+        [stackView, passwordResetButton].forEach { self.addSubview($0) }
         
         emailInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -189,33 +184,17 @@ final class ViewController: UIViewController {
             passwordResetButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30),
             passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight),
             
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             stackView.heightAnchor.constraint(equalToConstant: textViewHeight * 3 + 36)
         ])
     }
     
-    
     // MARK: - Functions
     @objc func secureButtonTapped() {
         passwordTextField.isSecureTextEntry.toggle()
-    }
-    
-    @objc func resetButtonTapped() {
-        let alert = UIAlertController(title: "비밀번호 바꾸기", message: "비밀번호를 바꾸시겠습니까?", preferredStyle: .alert)
-        let confirm = UIAlertAction(title: "확인", style: .default) { action in
-            print("확인")
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
-            print("취소")
-        }
-        
-        alert.addAction(confirm)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
     }
     
     @objc func textFieldEditted(_ textField: UITextField) {
@@ -233,19 +212,13 @@ final class ViewController: UIViewController {
         loginButton.isEnabled = true
     }
     
-    @objc func loginButtonTapped() {
-        print("로그인 버튼 클릭")
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+        self.endEditing(true)
     }
 }
 
-
-
 // MARK: - View Controller Delegate Extension
-extension ViewController: UITextFieldDelegate {
+extension LoginView: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTextField {
             emailTextFieldView.backgroundColor = UIColor.darkGray
