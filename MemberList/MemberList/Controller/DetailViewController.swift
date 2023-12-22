@@ -67,6 +67,7 @@ final class DetailViewController: UIViewController {
 //            let idx = navigationController!.viewControllers.count - 2
 //            let vc = navigationController?.viewControllers[idx] as! ViewController
 //            vc.memberListManager.updateMember(idx: memberId, member!)
+            dump(delegate)
             delegate?.updateMember(idx: memberId, member!)
         } else {
             // insert
